@@ -1,4 +1,4 @@
-# EAAR Regularization
+# EAAR Regularization made in Russia
 
 Error-Aware Attribution Regularization (EAAR) for tabular supervised learning.
 
