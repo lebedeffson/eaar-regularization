@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "EAAR Regularization"
+message: "If you use this repository, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Trofimov"
+    given-names: "Yuri V."
+  - family-names: "Averkin"
+    given-names: "Alexander N."
+  - family-names: "Lebedev"
+    given-names: "Mikhail D."
+  - family-names: "Lebedev"
+    given-names: "Alexey D."
+repository-code: "https://github.com/lebedeffson/eaar-regularization"
+url: "https://github.com/lebedeffson/eaar-regularization"
+license: "MIT"
+version: "1.0.0"
+date-released: "2026-05-06"

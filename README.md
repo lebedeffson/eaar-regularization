@@ -80,6 +80,10 @@ python scripts/run_mlp_classifier_eaar_multiseed.py \
 - configs are versioned in `configs/` and `results/ablation/configs/`
 - heavy binary artifacts are intentionally excluded from git history
 
+## How to Cite
+
+Citation metadata is provided in `CITATION.cff`.
+
 ## Current Status
 
 Repository is prepared for manuscript writing and reviewer-facing validation.
