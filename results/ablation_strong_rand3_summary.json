@@ -1,0 +1,49 @@
+{
+  "manifest": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation_strong_rand3/ablation_manifest_config_sml2010_ea_minimal_sml_strong_rand3.json",
+  "rows": [
+    {
+      "variant": "full_strong",
+      "n_seeds": 3,
+      "r2_final_mean": -422.18940927973364,
+      "r2_final_std": 732.7764375757428,
+      "r2_vanilla_mean": -424.4006646352803,
+      "r2_shap_raw_mean": -422.18940927973364,
+      "delta_r2_mean": 2.2112553555466508,
+      "wins": 1,
+      "losses": 2,
+      "fallback_rate": 0.0,
+      "shap_rate": 1.0,
+      "auc_top": 0.5051155890913321,
+      "auc_random": 0.19841345664213939,
+      "auc_bottom": 0.01561459332378945,
+      "auc_gap": 0.4895009957675427,
+      "auc_top_random_ratio": 2.715734308479803,
+      "n_eff_shap": 5.999021241274007,
+      "mass3_shap": 0.6083619543101281,
+      "entropy_shap": 2.1095167367665955,
+      "gini_shap": 0.630004053516216
+    },
+    {
+      "variant": "random_target_strong",
+      "n_seeds": 3,
+      "r2_final_mean": -421.6095724124711,
+      "r2_final_std": 731.7946090062172,
+      "r2_vanilla_mean": -424.4006646352803,
+      "r2_shap_raw_mean": -421.6095724124711,
+      "delta_r2_mean": 2.7910922228092154,
+      "wins": 1,
+      "losses": 2,
+      "fallback_rate": 0.0,
+      "shap_rate": 1.0,
+      "auc_top": 0.48358086530836886,
+      "auc_random": 0.18547854841222555,
+      "auc_bottom": 0.010578495805930288,
+      "auc_gap": 0.47300236950243857,
+      "auc_top_random_ratio": 2.723251518436164,
+      "n_eff_shap": 5.963614120205641,
+      "mass3_shap": 0.6104606638902167,
+      "entropy_shap": 2.105301138559204,
+      "gini_shap": 0.6313191261817901
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+dataset:
+  train_data: data/covtype.csv
+  test_size: 0.2
+  random_state: 42
+  target_column: target
+  max_samples: 100000
+
+model:
+  seed: 42
+  epochs: 50
+  batch_size: 512
+  lr: 0.001
+  dropout: 0.1
+
+eaar:
+  enabled: true
+  gamma: 0.02
+  masking_mode: permute
+  ema_beta: 0.9
+  alignment_loss: cosine_mse
+  alignment_alpha: 0.5
+  warmup_fraction: 0.25
+  score_type: logprob
+  grad_combine_mode: projected
+
+output:
+  results_dir: results/covtype_mlp_eaar
+

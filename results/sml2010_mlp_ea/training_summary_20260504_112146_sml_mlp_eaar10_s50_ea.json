@@ -1,0 +1,56 @@
+{
+  "timestamp": "20260504_112146_sml_mlp_eaar10_s50_ea",
+  "created_at": "2026-05-04T11:21:46",
+  "tag": "sml_mlp_eaar10_s50_ea",
+  "config_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/_tmp_mlp_multiseed/config_sml2010_mlp_ea_s50_ea.yaml",
+  "config_sha256": "d4b24a311199deb458e2ffcab38f94b70f25b998368718a8afecff2d928a8aa2",
+  "effective_config_sha256": "b0f7a8908758f5fd4795774feea8169a05488834b8048493b8135c2a9cbce22a",
+  "git_commit": "e07a530b390c470f764892d5063e70008597dce8",
+  "seed": 50,
+  "dataset": "sml2010",
+  "split_hash": "1eca4ee031d645d4b3c76cd973470893e478ec1a793755f6516c0581b861230e",
+  "data_hash": "136bd79b2b649b59bc0b4d04666b204c58ed3b31db1e3604561fc3b3d6737a1d",
+  "model_mode": "ea_raw",
+  "fallback_used": false,
+  "unstable_prediction_flag": false,
+  "metrics_source": "shap",
+  "metrics": {
+    "mse": 0.3211567152101259,
+    "rmse": 0.5667069041489842,
+    "mae": 0.43885088556169893,
+    "r2": 0.9710239378042251
+  },
+  "runtime": {
+    "device_used": "cuda",
+    "cpu_model": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "gpu_model": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_version": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "python_version": "3.14.4",
+    "platform": "Linux-7.0.2-arch1-1-x86_64-with-glibc2.43",
+    "ram_total_bytes": 15897735168
+  },
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_mlp_ea/mlp_state_20260504_112146_sml_mlp_eaar10_s50_ea.pt",
+  "saved_files": {
+    "predictions": "predictions_20260504_112146_sml_mlp_eaar10_s50_ea.npy",
+    "feature_importance": "feature_importance_20260504_112146_sml_mlp_eaar10_s50_ea.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260504_112146_sml_mlp_eaar10_s50_ea.csv"
+    }
+  },
+  "effective_ea_config": {
+    "enabled": true,
+    "error_importance_mode": "permute",
+    "error_importance_ema_beta": 0.9,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.25,
+    "gamma": 0.05
+  },
+  "timing": {
+    "data_loading_sec": null,
+    "vanilla_train_sec": 25.25582121499997,
+    "ea_train_sec": 25.25582121499997,
+    "total_sec": 25.25582121499997
+  }
+}

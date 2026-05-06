@@ -1,0 +1,380 @@
+{
+  "total_loss": [
+    2.7778726678628187,
+    0.9159035720886328,
+    1.0687440870664058,
+    0.932387902186467,
+    0.7918291160693536
+  ],
+  "main_loss": [
+    2.7778726678628187,
+    0.9159035720886328,
+    1.0687440870664058,
+    0.932387902186467,
+    0.7918291160693536
+  ],
+  "shap_loss": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_loss_normalized": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tikhonov_loss": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nonnegativity_loss": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tikhonov_lambda": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nonnegativity_lambda": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_scale_factor": [
+    1671619.406252169,
+    1299023.5769162725,
+    1173433.0873160118,
+    800000.0,
+    1078118.4627338473
+  ],
+  "shap_contribution": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tikhonov_contribution": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nonnegativity_contribution": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "regularization_share": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "accuracy_guard_loss": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "accuracy_guard_contribution": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "distill_loss": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "distill_contribution": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gate_entropy": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "gate_min": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "gate_max": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "gate_anchor_loss": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gate_anchor_contribution": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "q_err_entropy": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "q_err_gini": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "q_err_corr": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "p_q_corr": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "ea_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "main_grad_norm": [
+    15906.227844238281,
+    25686.6279296875,
+    28996.986328125,
+    13641.7578125,
+    17790.2421875
+  ],
+  "ea_grad_norm": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ea_main_grad_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ea_scale": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "main_grad_params": [
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0
+  ],
+  "ea_grad_params": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "grad_params_total": [
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0
+  ],
+  "rank_loss_raw": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "bottom_inv_loss_raw": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "rank_pairs_count": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "rank_violations_count": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "rank_grad_norm": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "rank_main_grad_ratio": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+  ],
+  "shap_clip_active": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "epoch_accepted": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "lr": [
+    8e-05,
+    8e-05,
+    8e-05,
+    8e-05,
+    8e-05
+  ],
+  "adaptive_gamma": [
+    0.05000000000000001,
+    0.05000000000000001,
+    0.05000000000000001,
+    0.05000000000000001,
+    0.05000000000000001
+  ],
+  "convergence_slowdown": [
+    0.41790485156304213,
+    0.3247558942290681,
+    0.29335827182900287,
+    0.20000000000000004,
+    0.26952961568346184
+  ],
+  "shap_consistency": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_sparsity": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_faithfulness": [
+    62.90805594737713,
+    105.96897397897182,
+    96.79278898239136,
+    99.63554824315585,
+    103.94367951613206
+  ],
+  "shap_stability": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_weight_consistency": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_weight_sparsity": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_weight_faithfulness": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shap_weight_stability": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "val_main_loss": [
+    1.4215878248214722,
+    0.9120408296585083,
+    0.8769197463989258,
+    0.7549376487731934,
+    0.7538341283798218
+  ]
+}

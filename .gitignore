@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+# Разрешаем ноутбуки в корне проекта (если нужны)
+# *.ipynb
+
+# Results / artifacts
+# Keep text summaries, drop heavy artifacts
+*.png
+*.pt
+*.npy
+*.npz
+*.zip
+*.docx
+*.pdf
+
+# Keep CSV by default, but exclude big raw dataset and temp runs
+data/covtype.csv
+results/_tmp_*/
+results/**/predictions_*.npy
+results/**/*.pt
+results/**/*.npy
+results/**/*.png
+
+# Optional heavy raw dataset
+normalized_linear_data_with_q_500K.csv
+
+# Packaging / archives
+archive/
+final_send_package_*/
+
+# Raw dumps
+data/*_raw/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

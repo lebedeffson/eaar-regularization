@@ -1,0 +1,54 @@
+{
+  "timestamp": "20260504_112118_sml_mlp_eaar10_s50_vanilla",
+  "created_at": "2026-05-04T11:21:18",
+  "tag": "sml_mlp_eaar10_s50_vanilla",
+  "config_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/_tmp_mlp_multiseed/config_sml2010_mlp_ea_s50_vanilla.yaml",
+  "config_sha256": "5b800f23aa756e2b8b1f515bb6504f1f6a220985c8e4a8648427a5322398a8f7",
+  "effective_config_sha256": "6daad44ff8b054ef921b6cfdf0b7516cecbf9b92e286eaad6ab92a7cf756e551",
+  "git_commit": "e07a530b390c470f764892d5063e70008597dce8",
+  "seed": 50,
+  "dataset": "sml2010",
+  "split_hash": "1eca4ee031d645d4b3c76cd973470893e478ec1a793755f6516c0581b861230e",
+  "data_hash": "136bd79b2b649b59bc0b4d04666b204c58ed3b31db1e3604561fc3b3d6737a1d",
+  "model_mode": "vanilla",
+  "fallback_used": false,
+  "unstable_prediction_flag": false,
+  "metrics_source": "vanilla",
+  "metrics": {
+    "mse": 0.23575863463934046,
+    "rmse": 0.4855498271437654,
+    "mae": 0.37399930522937114,
+    "r2": 0.9787282136406759
+  },
+  "runtime": {
+    "device_used": "cuda",
+    "cpu_model": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "gpu_model": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_version": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "python_version": "3.14.4",
+    "platform": "Linux-7.0.2-arch1-1-x86_64-with-glibc2.43",
+    "ram_total_bytes": 15897735168
+  },
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_mlp_ea/mlp_state_20260504_112118_sml_mlp_eaar10_s50_vanilla.pt",
+  "saved_files": {
+    "predictions": "predictions_20260504_112118_sml_mlp_eaar10_s50_vanilla.npy",
+    "feature_importance": "feature_importance_20260504_112118_sml_mlp_eaar10_s50_vanilla.csv",
+    "shap": {}
+  },
+  "effective_ea_config": {
+    "enabled": false,
+    "error_importance_mode": "permute",
+    "error_importance_ema_beta": 0.9,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.25,
+    "gamma": 0.05
+  },
+  "timing": {
+    "data_loading_sec": null,
+    "vanilla_train_sec": 4.127806453999938,
+    "ea_train_sec": 0.0,
+    "total_sec": 4.127806453999938
+  }
+}

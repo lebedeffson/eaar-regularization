@@ -1,0 +1,103 @@
+{
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/configs/config_sml2010_ea_minimal.yaml",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "tag": "sml_policy_refresh5_s42",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_192415_sml_policy_refresh5_s42.json",
+      "metrics_source": "unstable_run",
+      "model_mode": "unstable_run",
+      "fallback_used": false,
+      "unstable_prediction_flag": true,
+      "r2_final": -60.72322309463531,
+      "r2_vanilla": -60.72322309463531,
+      "r2_shap_raw": -60.757510094507005,
+      "r2_ea_raw": -60.757510094507005
+    },
+    {
+      "seed": 43,
+      "tag": "sml_policy_refresh5_s43",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_192431_sml_policy_refresh5_s43.json",
+      "metrics_source": "unstable_run",
+      "model_mode": "unstable_run",
+      "fallback_used": false,
+      "unstable_prediction_flag": true,
+      "r2_final": 0.8411100377850389,
+      "r2_vanilla": 0.8411100377850389,
+      "r2_shap_raw": 0.8411513523206642,
+      "r2_ea_raw": 0.8411513523206642
+    },
+    {
+      "seed": 44,
+      "tag": "sml_policy_refresh5_s44",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_192448_sml_policy_refresh5_s44.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9532581853107372,
+      "r2_vanilla": 0.953257540900016,
+      "r2_shap_raw": 0.9532581853107372,
+      "r2_ea_raw": 0.9532581853107372
+    },
+    {
+      "seed": 45,
+      "tag": "sml_policy_refresh5_s45",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_192504_sml_policy_refresh5_s45.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9366419867215785,
+      "r2_vanilla": 0.9366334281079046,
+      "r2_shap_raw": 0.9366419867215785,
+      "r2_ea_raw": 0.9366419867215785
+    },
+    {
+      "seed": 46,
+      "tag": "sml_policy_refresh5_s46",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_192520_sml_policy_refresh5_s46.json",
+      "metrics_source": "vanilla_fallback",
+      "model_mode": "final_policy",
+      "fallback_used": true,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9613411054548107,
+      "r2_vanilla": 0.9613411054548107,
+      "r2_shap_raw": 0.9613398923169124,
+      "r2_ea_raw": 0.9613398923169124
+    }
+  ],
+  "n_unstable_runs": 2,
+  "unstable_seeds": [
+    42,
+    43
+  ],
+  "aggregate_all_runs": {
+    "n_runs": 5,
+    "delta_r2_mean": -0.006847539089914844,
+    "delta_r2_min": -0.034286999871696366,
+    "delta_r2_max": 4.131453562528087e-05,
+    "wins": 3,
+    "losses": 2,
+    "fallback_rate": 0.2
+  },
+  "aggregate_stable_only": {
+    "n_runs": 3,
+    "delta_r2_mean": 2.6632954989539806e-06,
+    "delta_r2_min": -1.2131378982482843e-06,
+    "delta_r2_max": 8.558613673881332e-06,
+    "wins": 2,
+    "losses": 1,
+    "fallback_rate": 0.3333333333333333
+  },
+  "delta_r2_mean": -0.006847539089914844,
+  "delta_r2_min": -0.034286999871696366,
+  "delta_r2_max": 4.131453562528087e-05
+}

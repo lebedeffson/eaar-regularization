@@ -1,0 +1,35 @@
+{
+  "source": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/mlp_eaar_multiseed_config_energy_mlp_ea_energy_mlp_eaar5.json",
+  "label": "energy_mlp_eaar_vs_vanilla_auc_gap",
+  "metric_ea": "ea_auc_gap",
+  "metric_vanilla": "vanilla_auc_gap",
+  "unit_of_analysis": "seed-level paired comparison",
+  "n": 5,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deltas": [
+    -6.91869659003649,
+    -33.182277461804034,
+    3.0751894136152202,
+    6.796703988574194,
+    1.3456607945472285
+  ],
+  "delta_mean": -5.776683971020776,
+  "delta_std": 16.1209823643271,
+  "delta_median": 1.3456607945472285,
+  "ci95": {
+    "low": -19.90734804385936,
+    "high": 8.353980101817807
+  },
+  "wins": 3,
+  "losses": 2,
+  "wilcoxon_p": 0.8125,
+  "ttest_p": 0.4678767226114707,
+  "cohen_d": -0.35833324796652616,
+  "cliffs_delta": 0.04
+}

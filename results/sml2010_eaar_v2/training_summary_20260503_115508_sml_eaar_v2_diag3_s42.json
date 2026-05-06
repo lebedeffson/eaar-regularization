@@ -1,0 +1,350 @@
+{
+  "timestamp": "20260503_115508_sml_eaar_v2_diag3_s42",
+  "created_at": "2026-05-03T11:55:08",
+  "tag": "sml_eaar_v2_diag3_s42",
+  "model_mode": "final_policy",
+  "fallback_used": true,
+  "config_path": "/tmp/tmplippsn3x.yaml",
+  "config_sha256": "7f912423e015614dfd6298b01dd79f748da654cd6af2c96668d5e81689fb5702",
+  "effective_config_sha256": "8d923c621ab5a193d1c176827924f32b1cd47e6b8228b2d4663d6c1a9ddbda0d",
+  "git_commit": "3175c3ada3f8cd23dc10a676640fc45a1a3c4d9a",
+  "seed": 42,
+  "dataset": "sml2010",
+  "split_hash": "1d9c9536b554351b5b66322f7cff58c542ba44b9c11e29876076392d772ffa4c",
+  "run_meta": {
+    "fast_mode": true,
+    "inprocess_mode": true,
+    "tag_prefix": "sml_eaar_v2_diag3"
+  },
+  "model_state": "anfis_model_state_20260503_115508_sml_eaar_v2_diag3_s42.pt",
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_eaar_v2/anfis_model_state_20260503_115508_sml_eaar_v2_diag3_s42.pt",
+  "train_size": 3309,
+  "shap_train_size": 2481,
+  "test_size": 828,
+  "vanilla_train_count": 3309,
+  "shap_train_count": 2481,
+  "real_test_count": 828,
+  "normalize_sum": false,
+  "metrics": {
+    "mse": 0.5098531177900486,
+    "rmse": 0.7140399973321163,
+    "mae": 0.5412055440303783,
+    "r2": 0.9532332813069075,
+    "r2_weighted": 0.9532332813069075,
+    "r2_mean": 0.953226259701594
+  },
+  "vanilla_metrics": {
+    "mse": 0.5098531177900486,
+    "rmse": 0.7140399973321163,
+    "mae": 0.5412055440303783,
+    "r2": 0.9532332813069075,
+    "r2_weighted": 0.9532332813069075,
+    "r2_mean": 0.953226259701594
+  },
+  "shap_metrics": {
+    "mse": 0.5142188453199243,
+    "rmse": 0.7170905419261394,
+    "mae": 0.5460652160460244,
+    "r2": 0.9528328311691004,
+    "r2_weighted": 0.9528328311691004,
+    "r2_mean": 0.9528257748670201
+  },
+  "band_metrics": {
+    "all_outputs": {
+      "mse": 0.5098531177900486,
+      "rmse": 0.7140399973321163,
+      "mae": 0.5412055440303783,
+      "r2": 0.953226259701594
+    }
+  },
+  "metrics_source": "vanilla_fallback",
+  "shap_config_enabled": true,
+  "shap_applied": false,
+  "shap_rejected": true,
+  "effective_ea_config": {
+    "autonomous_error_shap": true,
+    "error_importance_mode": "permute",
+    "error_importance_ema_beta": 0.9,
+    "grad_importance_ema_beta": 0.9,
+    "error_target_rho": 0.5,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.4,
+    "ea_bypass_legacy_normalization": true,
+    "ea_use_grad_balance": true,
+    "ea_target_grad_ratio": 0.01,
+    "ea_scale_min": 0.1,
+    "ea_scale_max": 10000.0,
+    "debug_grad_norms": true,
+    "grad_norm_interval": 20,
+    "fast_mode": true,
+    "inprocess_mode": true
+  },
+  "training_time_total": 25.350160360336304,
+  "training_time_shap": 19.108191967010498,
+  "timing": {
+    "data_loading_sec": 0.04758846499953506,
+    "pso_sec": 25.350160360336304,
+    "vanilla_train_sec": 25.350160360336304,
+    "ea_train_sec": 19.108191967010498,
+    "deletion_eval_sec": null,
+    "total_sec": 25.529022499999883
+  },
+  "saved_files": {
+    "predictions": "predictions_20260503_115508_sml_eaar_v2_diag3_s42.npy",
+    "targets_test": "targets_test_20260503_115508_sml_eaar_v2_diag3_s42.npy",
+    "metrics_csv": "metrics_20260503_115508_sml_eaar_v2_diag3_s42.csv",
+    "feature_importance": "feature_importance_20260503_115508_sml_eaar_v2_diag3_s42.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260503_115508_sml_eaar_v2_diag3_s42.csv",
+      "history": "shap_history_20260503_115508_sml_eaar_v2_diag3_s42.json"
+    }
+  },
+  "diagnostics": {
+    "prediction_stats": {
+      "mean": 20.10276126516038,
+      "std": 3.2395895300746176,
+      "min": 10.714324951171875,
+      "max": 29.255056381225586,
+      "zero_fraction": 0.0,
+      "negative_fraction": 0.0,
+      "negative_count": 0
+    },
+    "target_stats": {
+      "mean": 20.091670591787437,
+      "std": 3.306111225086599,
+      "min": 11.144,
+      "max": 28.8173
+    },
+    "coeff_stats": {
+      "mean": 0.45083801888649383,
+      "std": 2.784747670428471,
+      "min": -11.781550407409668,
+      "max": 18.83663558959961,
+      "abs_mean": 1.166327044712235,
+      "finite_fraction": 1.0,
+      "nonzero": 480,
+      "total": 480
+    },
+    "nonfinite_parameters": {},
+    "regularization": {
+      "active_components": [
+        "sparsity"
+      ],
+      "shap_contribution": {
+        "mean": 1.0184791697875515e-05,
+        "last": 1.3096528840460218e-05,
+        "max": 3.723358998122888e-05
+      },
+      "tikhonov_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "nonnegativity_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "regularization_share": {
+        "mean": 0.03195067476358586,
+        "last": 0.0056101815231973835,
+        "max": 0.08857892394605302
+      },
+      "shap_scale_factor": {
+        "mean": 0.3491922455825893,
+        "last": 0.34847989312709476,
+        "max": 0.5916457268099201
+      },
+      "shap_loss_normalized": {
+        "mean": 0.1017972867330934,
+        "last": 0.1061890232257354,
+        "max": 0.1725811196061281
+      },
+      "nonnegativity_loss": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "rank_loss_raw": {
+        "mean": 0.01823168977553773,
+        "last": 0.01851125297924647,
+        "max": 0.018550054552272346
+      },
+      "bottom_inv_loss_raw": {
+        "mean": 0.7888236410597452,
+        "last": 0.7367874918839871,
+        "max": 1.4535281031559675
+      },
+      "rank_pairs_count": {
+        "mean": 170.13333333333333,
+        "last": 170.17948717948718,
+        "max": 170.56410256410257
+      },
+      "rank_violations_count": {
+        "mean": 61.28376068376069,
+        "last": 61.61538461538461,
+        "max": 61.97435897435897
+      },
+      "rank_grad_norm": {
+        "mean": 2.252983711163203,
+        "last": 2.725923180580139,
+        "max": 3.1114559173583984
+      },
+      "rank_main_grad_ratio": {
+        "mean": 0.0007445728361457425,
+        "last": 0.001578204434234239,
+        "max": 0.001578204434234239
+      },
+      "p_q_corr": {
+        "mean": 0.16275066861357448,
+        "last": 0.12368000690371563,
+        "max": 0.19290685176085204
+      },
+      "q_err_entropy": {
+        "mean": 0.8102248209154504,
+        "last": 0.7566649432365711,
+        "max": 0.8573334415753683
+      },
+      "q_err_gini": {
+        "mean": 0.9026404403213761,
+        "last": 0.9075649518233079,
+        "max": 0.9093784842735682
+      },
+      "q_err_corr": {
+        "mean": 0.9198381831556948,
+        "last": 0.9443349043528239,
+        "max": 0.9525612470431205
+      },
+      "ea_ratio": {
+        "mean": 2.810933508712917e-05,
+        "last": 3.621311178647328e-05,
+        "max": 0.0001077347739901131
+      },
+      "ea_grad_norm": {
+        "mean": 113.92557373046876,
+        "last": 148.05797958374023,
+        "max": 216.55142974853516
+      },
+      "main_grad_norm": {
+        "mean": 4211.84296875,
+        "last": 1762.705810546875,
+        "max": 8271.391845703125
+      },
+      "ea_main_grad_ratio": {
+        "mean": 0.0353272670936989,
+        "last": 0.08205098516458172,
+        "max": 0.08205098516458172
+      },
+      "ea_scale": {
+        "mean": 0.4739417678263208,
+        "last": 0.13265351214709506,
+        "max": 1.163281058039543
+      },
+      "gate_min": {
+        "mean": 0.9899976197470968,
+        "last": 0.9899980425834656,
+        "max": 0.9899995831342844
+      },
+      "gate_max": {
+        "mean": 0.9900018905981992,
+        "last": 0.9900020360946655,
+        "max": 0.9900039999912946
+      },
+      "gate_anchor_loss": {
+        "mean": 9.999998135474297e-05,
+        "last": 9.999586006578726e-05,
+        "max": 0.00010004237731500792
+      },
+      "component_terms": {
+        "consistency": {
+          "mean": 0.26808760736742593,
+          "last": 0.28564802347085416,
+          "max": 0.28564802347085416
+        },
+        "sparsity": {
+          "mean": 0.9378947380261543,
+          "last": 0.937894941904606,
+          "max": 0.9378949571878482
+        },
+        "faithfulness": {
+          "mean": 0.36359166783145347,
+          "last": 0.3861607313156128,
+          "max": 0.3861607313156128
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "component_weights": {
+        "consistency": {
+          "mean": 1.0,
+          "last": 1.0,
+          "max": 1.0
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "weighted_component_signal": {
+        "consistency": {
+          "mean": 0.26808760736742593,
+          "last": 0.28564802347085416,
+          "max": 0.28564802347085416
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "dominant_shap_component": "consistency",
+      "dominant_regularizer": "shap"
+    }
+  },
+  "dataset_settings": {
+    "train_limit": null,
+    "train_fraction": null,
+    "mix_with_real": false,
+    "mix_ratio": 0.0,
+    "synthetic_test_size": 0.2,
+    "test_size": 0.2,
+    "real_data_split": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2
+    },
+    "random_state": 42,
+    "shap_uses_real_data_only": true,
+    "test_uses_real_data_only": true
+  },
+  "band_metrics_denorm": {},
+  "shap_files": {
+    "feature_importance_shap": "feature_importance_shap_20260503_115508_sml_eaar_v2_diag3_s42.csv",
+    "history": "shap_history_20260503_115508_sml_eaar_v2_diag3_s42.json"
+  }
+}

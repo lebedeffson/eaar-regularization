@@ -1,0 +1,2 @@
+seed,tag,summary,metrics_source,importance_kind_eval,r2_final,r2_vanilla,r2_shap_raw,entropy_shap,gini_shap,n_eff_shap,mass3_shap,entropy_vanilla,gini_vanilla,n_eff_vanilla,mass3_vanilla
+42,neg_core_v2_s1_task_only_s42,/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_ea_minimal/training_summary_20260504_111348_neg_core_v2_s1_task_only_s42.json,shap,ea_raw,0.8888782066659727,0.958045274677095,0.8888782066659727,2.5347130329125305,0.4954662581634197,10.237968325370703,0.4253542691120162,2.58747092019557,0.4196850806019108,12.185114146923667,0.33181575244989353

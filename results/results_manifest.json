@@ -1,0 +1,68 @@
+{
+  "created_at": "2026-05-04T18:57:20",
+  "commit": "b55e78754c08a8ac3f3af161fee9c958d592b6e9",
+  "environment": {
+    "device_used": "cuda",
+    "cpu_model": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "gpu_model": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_version": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "python_version": "3.14.4",
+    "platform": "Linux-7.0.2-arch1-1-x86_64-with-glibc2.43",
+    "ram_total_bytes": 15897735168
+  },
+  "tables": {
+    "r2_multidataset": "results/methods_compare_multidataset_20260503.md",
+    "faithfulness_ea_vs_vanilla": "results/sml2010_ea_minimal_vs_vanilla_faithfulness.md",
+    "faithfulness_baselines_vs_ea": "results/faithfulness_baselines_vs_ea_20260503.md",
+    "mlp_portability_sml2010": "results/mlp_eaar_vs_vanilla_sml2010_5seed_20260503.md",
+    "faithfulness_mode_compare": "results/sml2010_faithfulness_mode_compare_stability_guard5_20260503.md",
+    "ablation_nf3_ea_raw": "results/ablation_nf3_ea_raw_summary_20260503.md",
+    "stability_sensitivity": "results/stability_sensitivity_multiseed_config_sml2010_ea_minimal_sml_eaar_stability_guard5_20260503.md"
+  },
+  "artifacts": {
+    "sml_multiseed": "results/multiseed_config_sml2010_ea_minimal_sml_ea10_ckpt.json",
+    "energy_multiseed": "results/multiseed_config_energy_ea_minimal_energy_ea10.json",
+    "naval_multiseed": "results/multiseed_config_naval_ea_minimal_naval_ea_diag10.json",
+    "sml_nonfast_5": "results/multiseed_config_sml2010_ea_minimal_sml_ea5_full.json",
+    "sml_nonfast_5_stability_guard": "results/multiseed_config_sml2010_ea_minimal_sml_eaar_stability_guard5.json",
+    "mlp_multiseed_sml2010_5": "results/mlp_eaar_multiseed_config_sml2010_mlp_ea_sml_mlp_eaar5.json",
+    "baseline_sml": "results/baselines_sml2010_sml2010_10seed.json",
+    "baseline_energy": "results/baselines_energy_efficiency_energy_10seed.json",
+    "baseline_naval": "results/baselines_naval_propulsion_naval_10seed.json",
+    "significance_auc_gap_sml": "results/significance_sml2010_ea_vs_vanilla_auc_gap.json"
+  },
+  "configs": {
+    "ea_sml": "configs/config_sml2010_ea_minimal.yaml",
+    "ea_energy": "configs/config_energy_ea_minimal.yaml",
+    "ea_naval": "configs/config_naval_ea_minimal.yaml",
+    "vanilla_sml": "configs/config_sml2010_vanilla_real_only.yaml",
+    "vanilla_energy": "configs/config_energy_vanilla_real_only.yaml",
+    "vanilla_naval": "configs/config_naval_vanilla_real_only.yaml"
+  },
+  "file_hashes": {
+    "tables.r2_multidataset": "c0f66bcc1886b896d9cf5194e99ff13725479a7b78e82e88827265b691962714",
+    "tables.faithfulness_ea_vs_vanilla": "6f6180ced50285988c85af21b01988e93054e8f345ae65facf36e1f4e6ff94a4",
+    "tables.faithfulness_baselines_vs_ea": "0b3910b8eaa06c8bea8897a51529fc371e93d3ef14d53b9b048de4c119658750",
+    "tables.mlp_portability_sml2010": "c71da745cdd2b253bc1d37cb69e452dcb1dc4a89acbea0672ab4391e0c36eb69",
+    "tables.faithfulness_mode_compare": "a6bd0dfc945db764ae1f03c8a930cf1f67fc4e37682593b0223891d0fe4ad61b",
+    "tables.ablation_nf3_ea_raw": "d419b89a049b9a916c26f7792d0ba714f99f1a06985523bc2df6dfa0be9cbe82",
+    "tables.stability_sensitivity": "76363f8b1540973b96adce58d0d84e79ec182b443c72a239bda4d19a9f6a25eb",
+    "artifacts.sml_multiseed": "3687ca8a24c437b98cb657f16ad35f0ef3704f6b4cb47e6ed2bbf884674f0fd8",
+    "artifacts.energy_multiseed": "5fc97d240c2017773b0152d3ecdbe39cfd0b62390c519064e08931d034c66c48",
+    "artifacts.naval_multiseed": "3953345530f72b05d77abd93ab587c8a3988a0228ba84f7757dedb8fc8df4278",
+    "artifacts.sml_nonfast_5": "21a5748a53ac7455a5fc12601c11a81cbbc548fecb3c09e6d6c83d33f27908e5",
+    "artifacts.sml_nonfast_5_stability_guard": "d2b2273a7144f146f57914ef47709cdbd479a7ec26adb050ec5c48f0e314795d",
+    "artifacts.mlp_multiseed_sml2010_5": "b0b0137d28dc001cbf74ab6847513dbb7093144ef4cb302b14d80870d2683dec",
+    "artifacts.baseline_sml": "9ed81477d5e7279d2473a2ef004d056271d44b044afc02f9a04f0c45cebc7baf",
+    "artifacts.baseline_energy": "4e66315cdb4fdd581062b4b45017eb2565980647ffc61a96fce3023f51a98419",
+    "artifacts.baseline_naval": "abeb7e619007e00c6073cb575c3d5f4319317d21b77c916645c716eff4d384c0",
+    "artifacts.significance_auc_gap_sml": "1e7f3267b42ffcc5b2c5d099314ccbec8c352a87e27f8ed7537c35815d5dc422",
+    "configs.ea_sml": "d50fca34a02157ff51495ba1f05a24baed2a93978eb266df8ad760f210e2c6b9",
+    "configs.ea_energy": "1a0fa3e748504ac46eb122226259e82f2044fabb5b0509300b6c092ecd829c4c",
+    "configs.ea_naval": "87665bd191f28ef0c5f39ac0d7c57c54bee87d407bbd8fd168f1cadde1d08ca7",
+    "configs.vanilla_sml": "59cac94ba30a7daa60d3f4863d6eda7d9e820b6254f1644c1f7f1d068342a9a6",
+    "configs.vanilla_energy": "a40bd02010e145dd9b8fcae8f3e42a9e02914865d2160e0958c55039f451f81a",
+    "configs.vanilla_naval": "ae46ea0dae5830ae529da4344fcafff18a27970e77d23e0d31f4a1fc494349ea"
+  }
+}

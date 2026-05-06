@@ -1,0 +1,44 @@
+{
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/configs/config_sml2010_ea_minimal.yaml",
+  "seeds": [
+    42
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "tag": "sml_q1_policy_smoke1c_s42",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_190616_sml_q1_policy_smoke1c_s42.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9463567035716917,
+      "r2_vanilla": 0.9463535117983867,
+      "r2_shap_raw": 0.9463567035716917,
+      "r2_ea_raw": 0.9463567035716917
+    }
+  ],
+  "n_unstable_runs": 0,
+  "unstable_seeds": [],
+  "aggregate_all_runs": {
+    "n_runs": 1,
+    "delta_r2_mean": 3.1917733049890984e-06,
+    "delta_r2_min": 3.1917733049890984e-06,
+    "delta_r2_max": 3.1917733049890984e-06,
+    "wins": 1,
+    "losses": 0,
+    "fallback_rate": 0.0
+  },
+  "aggregate_stable_only": {
+    "n_runs": 1,
+    "delta_r2_mean": 3.1917733049890984e-06,
+    "delta_r2_min": 3.1917733049890984e-06,
+    "delta_r2_max": 3.1917733049890984e-06,
+    "wins": 1,
+    "losses": 0,
+    "fallback_rate": 0.0
+  },
+  "delta_r2_mean": 3.1917733049890984e-06,
+  "delta_r2_min": 3.1917733049890984e-06,
+  "delta_r2_max": 3.1917733049890984e-06
+}

@@ -1,0 +1,89 @@
+{
+  "created_at": "2026-05-03T20:14:25",
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/configs/config_covtype_mlp_eaar_300k.yaml",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "k_list": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "mask": "permute",
+  "random_trials": 20,
+  "aggregate": {
+    "n_runs": 3,
+    "delta_accuracy_mean": -0.00021111111111105085,
+    "delta_accuracy_std": 0.0013593639580224322,
+    "delta_macro_f1_mean": -0.000717433515454835,
+    "delta_macro_f1_std": 0.004038893495487522,
+    "delta_ce_mean": 0.0020975889896271602,
+    "delta_ce_std": 0.0032241139413988263,
+    "vanilla_auc_gap_ce_mean": 2.7437069486685925,
+    "ea_auc_gap_ce_mean": 2.837760160804878,
+    "vanilla_top_random_ce_mean": 10.788086083102256,
+    "ea_top_random_ce_mean": 11.205588983268271,
+    "faithfulness_wins": 3,
+    "faithfulness_losses": 0
+  },
+  "runs": [
+    {
+      "seed": 42,
+      "vanilla_accuracy": 0.8769666666666667,
+      "ea_accuracy": 0.8768166666666667,
+      "delta_accuracy": -0.00014999999999998348,
+      "vanilla_macro_f1": 0.8182869680347876,
+      "ea_macro_f1": 0.8222144211527745,
+      "delta_macro_f1": 0.003927453117986923,
+      "vanilla_ce": 0.2990185306241483,
+      "ea_ce": 0.30401975740645654,
+      "delta_ce": 0.0050012267823082435,
+      "vanilla_auc_gap_ce": 2.7307528786123427,
+      "ea_auc_gap_ce": 2.8210138468580093,
+      "vanilla_top_random_ce": 9.813159316655131,
+      "ea_top_random_ce": 10.016764206620262,
+      "vanilla_summary": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/training_summary_20260503_195341_covtype300k_cls_eaar3_s42_vanilla.json",
+      "ea_summary": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/training_summary_20260503_195931_covtype300k_cls_eaar3_s42_ea.json"
+    },
+    {
+      "seed": 43,
+      "vanilla_accuracy": 0.8774333333333333,
+      "ea_accuracy": 0.87855,
+      "delta_accuracy": 0.0011166666666667657,
+      "vanilla_macro_f1": 0.8237637087399622,
+      "ea_macro_f1": 0.8203612966822608,
+      "delta_macro_f1": -0.0034024120577014205,
+      "vanilla_ce": 0.29930629401346037,
+      "ea_ce": 0.2979342493521652,
+      "delta_ce": -0.0013720446612951465,
+      "vanilla_auc_gap_ce": 2.740204457732497,
+      "ea_auc_gap_ce": 2.8539600645888057,
+      "vanilla_top_random_ce": 11.202314872734396,
+      "ea_top_random_ce": 11.863529040649375,
+      "vanilla_summary": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/training_summary_20260503_200059_covtype300k_cls_eaar3_s43_vanilla.json",
+      "ea_summary": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/training_summary_20260503_200644_covtype300k_cls_eaar3_s43_ea.json"
+    },
+    {
+      "seed": 44,
+      "vanilla_accuracy": 0.87835,
+      "ea_accuracy": 0.87675,
+      "delta_accuracy": -0.0015999999999999348,
+      "vanilla_macro_f1": 0.8262037173341102,
+      "ea_macro_f1": 0.8235263757274602,
+      "delta_macro_f1": -0.0026773416066500078,
+      "vanilla_ce": 0.3020432467277237,
+      "ea_ce": 0.3047068315755921,
+      "delta_ce": 0.0026635848478683832,
+      "vanilla_auc_gap_ce": 2.7601635096609374,
+      "ea_auc_gap_ce": 2.8383065709678195,
+      "vanilla_top_random_ce": 11.348784059917236,
+      "ea_top_random_ce": 11.736473702535175,
+      "vanilla_summary": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/training_summary_20260503_200811_covtype300k_cls_eaar3_s44_vanilla.json",
+      "ea_summary": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/training_summary_20260503_201357_covtype300k_cls_eaar3_s44_ea.json"
+    }
+  ]
+}

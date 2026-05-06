@@ -1,0 +1,114 @@
+{
+  "timestamp": "20260504_112817_covtype_cls_eaar5_pc_s43_ea",
+  "created_at": "2026-05-04T11:28:17",
+  "tag": "covtype_cls_eaar5_pc_s43_ea",
+  "config_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/_tmp_mlp_cls_multiseed/config_covtype_mlp_eaar_s43_ea.yaml",
+  "config_sha256": "6ecdbed952379f38c8e04cb289549eaad486726ab7f597424b4f00f8f34532ba",
+  "effective_config_sha256": "10ee83d8dffdb2ad9a805ef3b9cf5bc34b402b5e20bfe6cd32fd9ef67789d126",
+  "git_commit": "e07a530b390c470f764892d5063e70008597dce8",
+  "seed": 43,
+  "dataset": "covtype",
+  "split_hash": "72abc58f2b303fb19e8a25f1af25cb7b79a5d7e91ab90ebb4af23542b67233af",
+  "data_hash": "bb5a8fb603060160f64640da507502d7d3ea0c160d687b4d03dcfb6e5bd5d888",
+  "model_mode": "ea_raw",
+  "fallback_used": false,
+  "unstable_prediction_flag": false,
+  "metrics_source": "ea_raw",
+  "metrics": {
+    "accuracy": 0.8476,
+    "balanced_accuracy": 0.7364849744378483,
+    "macro_f1": 0.7675492023885726,
+    "ce": 0.3770346514618412,
+    "per_class": [
+      {
+        "class": 0,
+        "precision": 0.8579250720461095,
+        "recall": 0.8165112452002194,
+        "f1": 0.8367060146149522,
+        "support": 7292
+      },
+      {
+        "class": 1,
+        "precision": 0.849490538573508,
+        "recall": 0.89766201804758,
+        "f1": 0.8729122002293463,
+        "support": 9752
+      },
+      {
+        "class": 2,
+        "precision": 0.8179723502304147,
+        "recall": 0.8651502843216897,
+        "f1": 0.8409001184366364,
+        "support": 1231
+      },
+      {
+        "class": 3,
+        "precision": 0.7721518987341772,
+        "recall": 0.648936170212766,
+        "f1": 0.7052023121387283,
+        "support": 94
+      },
+      {
+        "class": 4,
+        "precision": 0.7823834196891192,
+        "recall": 0.4617737003058104,
+        "f1": 0.5807692307692308,
+        "support": 327
+      },
+      {
+        "class": 5,
+        "precision": 0.7362204724409449,
+        "recall": 0.6254180602006689,
+        "f1": 0.6763110307414105,
+        "support": 598
+      },
+      {
+        "class": 6,
+        "precision": 0.8811292719167905,
+        "recall": 0.839943342776204,
+        "f1": 0.8600435097897027,
+        "support": 706
+      }
+    ]
+  },
+  "runtime": {
+    "device_used": "cuda",
+    "cpu_model": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "gpu_model": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_version": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "python_version": "3.14.4",
+    "platform": "Linux-7.0.2-arch1-1-x86_64-with-glibc2.43",
+    "ram_total_bytes": 15897735168
+  },
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/mlp_cls_state_20260504_112817_covtype_cls_eaar5_pc_s43_ea.pt",
+  "saved_files": {
+    "logits": "logits_20260504_112817_covtype_cls_eaar5_pc_s43_ea.npy",
+    "feature_importance": "feature_importance_20260504_112817_covtype_cls_eaar5_pc_s43_ea.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260504_112817_covtype_cls_eaar5_pc_s43_ea.csv"
+    }
+  },
+  "effective_eaar_config": {
+    "enabled": true,
+    "task_type": "classification",
+    "score_type": "logprob",
+    "masking_mode": "permute",
+    "ema_beta": 0.9,
+    "alignment_loss": "cosine_mse",
+    "alignment_alpha": 0.5,
+    "warmup_fraction": 0.25,
+    "gamma": 0.02,
+    "grad_combine_mode": "projected"
+  },
+  "training_diag": {
+    "grad_conflict_dot": -0.05313260108232498,
+    "grad_conflict_cosine": -0.08024522662162781,
+    "grad_projected": true,
+    "combine_mode": "projected"
+  },
+  "timing": {
+    "train_sec": 120.95826991599984,
+    "total_sec": 120.95826991599984
+  }
+}

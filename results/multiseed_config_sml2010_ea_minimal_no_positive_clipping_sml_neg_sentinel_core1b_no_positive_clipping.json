@@ -1,0 +1,44 @@
+{
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation_neg_sentinel_core1b/configs/config_sml2010_ea_minimal_no_positive_clipping.yaml",
+  "seeds": [
+    42
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "tag": "sml_neg_sentinel_core1b_no_positive_clipping_s42",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260503_191109_sml_neg_sentinel_core1b_no_positive_clipping_s42.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.784012126746788,
+      "r2_vanilla": 0.9463535117983867,
+      "r2_shap_raw": 0.784012126746788,
+      "r2_ea_raw": 0.784012126746788
+    }
+  ],
+  "n_unstable_runs": 0,
+  "unstable_seeds": [],
+  "aggregate_all_runs": {
+    "n_runs": 1,
+    "delta_r2_mean": -0.16234138505159867,
+    "delta_r2_min": -0.16234138505159867,
+    "delta_r2_max": -0.16234138505159867,
+    "wins": 0,
+    "losses": 1,
+    "fallback_rate": 0.0
+  },
+  "aggregate_stable_only": {
+    "n_runs": 1,
+    "delta_r2_mean": -0.16234138505159867,
+    "delta_r2_min": -0.16234138505159867,
+    "delta_r2_max": -0.16234138505159867,
+    "wins": 0,
+    "losses": 1,
+    "fallback_rate": 0.0
+  },
+  "delta_r2_mean": -0.16234138505159867,
+  "delta_r2_min": -0.16234138505159867,
+  "delta_r2_max": -0.16234138505159867
+}

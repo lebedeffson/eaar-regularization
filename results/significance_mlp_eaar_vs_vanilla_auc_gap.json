@@ -1,0 +1,25 @@
+{
+  "source": "results/mlp_eaar_multiseed_config_sml2010_mlp_ea_sml_mlp_eaar5.json",
+  "metric": "delta_auc_gap_eaar_minus_vanilla",
+  "n": 5,
+  "deltas": [
+    3.4562026155669052,
+    1.33217216901647,
+    3.653253636160372,
+    -0.15000023250432548,
+    1.0688017975106927
+  ],
+  "delta_mean": 1.8720859971500228,
+  "delta_std": 1.6361226105002036,
+  "delta_median": 1.33217216901647,
+  "ci95": {
+    "low": 0.4379612975216993,
+    "high": 3.3062106967783462
+  },
+  "wins": 4,
+  "losses": 1,
+  "wilcoxon_p": 0.125,
+  "ttest_p": 0.06273393332561439,
+  "cohen_d": 1.1442210902382672,
+  "cliffs_delta": 0.6
+}

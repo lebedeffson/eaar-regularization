@@ -1,0 +1,45 @@
+{
+  "source": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/mlp_eaar_multiseed_config_sml2010_mlp_ea_sml_mlp_eaar10.json",
+  "label": "sml2010_mlp_eaar_vs_vanilla_auc_gap_10seed",
+  "metric_ea": "ea_auc_gap",
+  "metric_vanilla": "vanilla_auc_gap",
+  "unit_of_analysis": "seed-level paired comparison",
+  "n": 10,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "deltas": [
+    3.4562026155669052,
+    1.33217216901647,
+    3.653253636160372,
+    -0.15000023250432548,
+    1.0688017975106927,
+    -0.7138967752151153,
+    -1.301237044130314,
+    -1.6292249382527544,
+    8.190550250648055,
+    5.070584652364772
+  ],
+  "delta_mean": 1.8977206131164757,
+  "delta_std": 3.160008191107643,
+  "delta_median": 1.2004869832635814,
+  "ci95": {
+    "low": -0.060872755386527144,
+    "high": 3.8563139816194782
+  },
+  "wins": 6,
+  "losses": 4,
+  "wilcoxon_p": 0.16015625,
+  "ttest_p": 0.09001990181314769,
+  "cohen_d": 0.6005429411405063,
+  "cliffs_delta": 0.36
+}

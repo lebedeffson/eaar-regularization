@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-05-03T19:22:37",
+  "base_config": "/home/lebedeffson/Code/bonner-shap-reconstruction/configs/config_sml2010_ea_minimal.yaml",
+  "seeds": "42,43,44",
+  "variants": {
+    "full_strong": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation_strong_rand3/configs/config_sml2010_ea_minimal_full_strong.yaml",
+      "patch": {
+        "shap_reg.active_components": [
+          "faithfulness"
+        ],
+        "shap_reg.gamma_sparsity": 0.0,
+        "shap_reg.use_adaptive_gamma": false,
+        "shap_reg.gamma": 0.05,
+        "shap_reg.gamma_start": 0.05,
+        "shap_reg.gamma_end": 0.05,
+        "shap_reg.ea_warmup_fraction": 0.0,
+        "shap_reg.ea_use_grad_balance": false,
+        "shap_reg.error_target_rho": 1.0
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_full_strong_sml_strong_rand3_full_strong.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_full_strong_sml_strong_rand3_full_strong_permute_ea_raw.json"
+    },
+    "random_target_strong": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation_strong_rand3/configs/config_sml2010_ea_minimal_random_target_strong.yaml",
+      "patch": {
+        "shap_reg.active_components": [
+          "faithfulness"
+        ],
+        "shap_reg.ea_target_ablation_mode": "random_target",
+        "shap_reg.use_adaptive_gamma": false,
+        "shap_reg.gamma": 0.05,
+        "shap_reg.gamma_start": 0.05,
+        "shap_reg.gamma_end": 0.05,
+        "shap_reg.ea_warmup_fraction": 0.0,
+        "shap_reg.ea_use_grad_balance": false,
+        "shap_reg.error_target_rho": 1.0
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_random_target_strong_sml_strong_rand3_random_target_strong.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_random_target_strong_sml_strong_rand3_random_target_strong_permute_ea_raw.json"
+    }
+  }
+}

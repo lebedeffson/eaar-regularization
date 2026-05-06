@@ -1,0 +1,260 @@
+{
+  "timestamp": "20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43",
+  "created_at": "2026-05-03T11:43:35",
+  "tag": "sml_eaar_v2_fast3_eaar_gate_s43",
+  "model_mode": "final_policy",
+  "fallback_used": true,
+  "config_path": "/tmp/tmpujealvzt.yaml",
+  "config_sha256": "aa6b845b50a803f2ac7710a3ce91a82e5bace5e9fc351ff57361d4297d94d3a1",
+  "effective_config_sha256": "08a094564106ff21f25ef0a7c3b99e06987dd2e9572b53cb47136841f8fcecf3",
+  "git_commit": "3175c3ada3f8cd23dc10a676640fc45a1a3c4d9a",
+  "seed": 43,
+  "dataset": "sml2010",
+  "split_hash": "e1dd4f5d7d9624cc456ea97cd92466d260418b8470a31a79188aaf73b21b9c8b",
+  "run_meta": {
+    "fast_mode": true,
+    "inprocess_mode": true,
+    "tag_prefix": "sml_eaar_v2_fast3_eaar_gate"
+  },
+  "model_state": "anfis_model_state_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.pt",
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_eaar_v2/anfis_model_state_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.pt",
+  "train_size": 3309,
+  "shap_train_size": 2481,
+  "test_size": 828,
+  "vanilla_train_count": 3309,
+  "shap_train_count": 2481,
+  "real_test_count": 828,
+  "normalize_sum": false,
+  "metrics": {
+    "mse": 0.5423860346340087,
+    "rmse": 0.736468624337798,
+    "mae": 0.5379489360929108,
+    "r2": 0.9504482777730557,
+    "r2_weighted": 0.9504482777730557,
+    "r2_mean": 0.9504472287960382
+  },
+  "vanilla_metrics": {
+    "mse": 0.5423860346340087,
+    "rmse": 0.736468624337798,
+    "mae": 0.5379489360929108,
+    "r2": 0.9504482777730557,
+    "r2_weighted": 0.9504482777730557,
+    "r2_mean": 0.9504472287960382
+  },
+  "shap_metrics": {
+    "mse": 0.5441373093117485,
+    "rmse": 0.7376566337475374,
+    "mae": 0.5371485895249,
+    "r2": 0.9502882834685692,
+    "r2_weighted": 0.9502882834685692,
+    "r2_mean": 0.9502871798637037
+  },
+  "band_metrics": {
+    "all_outputs": {
+      "mse": 0.5423860346340087,
+      "rmse": 0.736468624337798,
+      "mae": 0.5379489360929108,
+      "r2": 0.9504472287960382
+    }
+  },
+  "metrics_source": "vanilla_fallback",
+  "shap_config_enabled": true,
+  "shap_applied": false,
+  "shap_rejected": true,
+  "effective_ea_config": {
+    "autonomous_error_shap": true,
+    "error_importance_mode": "permute",
+    "error_importance_ema_beta": 0.9,
+    "grad_importance_ema_beta": 0.9,
+    "error_target_rho": 0.5,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.4,
+    "ea_bypass_legacy_normalization": true,
+    "ea_use_grad_balance": true,
+    "ea_target_grad_ratio": 0.01,
+    "ea_scale_min": 0.1,
+    "ea_scale_max": 10000.0,
+    "debug_grad_norms": true,
+    "grad_norm_interval": 20,
+    "fast_mode": true,
+    "inprocess_mode": true
+  },
+  "training_time_total": 22.295035123825073,
+  "training_time_shap": 16.17142629623413,
+  "timing": {
+    "data_loading_sec": 0.0447610880000866,
+    "pso_sec": 22.295035123825073,
+    "vanilla_train_sec": 22.295035123825073,
+    "ea_train_sec": 16.17142629623413,
+    "deletion_eval_sec": null,
+    "total_sec": 22.369332598000256
+  },
+  "saved_files": {
+    "predictions": "predictions_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.npy",
+    "targets_test": "targets_test_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.npy",
+    "metrics_csv": "metrics_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.csv",
+    "feature_importance": "feature_importance_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.csv",
+      "history": "shap_history_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.json"
+    }
+  },
+  "diagnostics": {
+    "prediction_stats": {
+      "mean": 20.348639344823532,
+      "std": 3.242463215016411,
+      "min": 11.615819931030273,
+      "max": 28.23975372314453,
+      "zero_fraction": 0.0,
+      "negative_fraction": 0.0,
+      "negative_count": 0
+    },
+    "target_stats": {
+      "mean": 20.320581884057972,
+      "std": 3.3130177326452044,
+      "min": 11.1513,
+      "max": 28.884
+    },
+    "coeff_stats": {
+      "mean": 0.5517947760627976,
+      "std": 2.9773691078504037,
+      "min": -9.0829496383667,
+      "max": 25.02347755432129,
+      "abs_mean": 1.3138648746516082,
+      "finite_fraction": 1.0,
+      "nonzero": 480,
+      "total": 480
+    },
+    "nonfinite_parameters": {},
+    "regularization": {
+      "active_components": [
+        "sparsity"
+      ],
+      "shap_contribution": {
+        "mean": 5.68032170640902e-06,
+        "last": 9.564054462083359e-06,
+        "max": 2.24581704060256e-05
+      },
+      "tikhonov_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "nonnegativity_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "regularization_share": {
+        "mean": 0.0383666842546179,
+        "last": 0.02320657026622382,
+        "max": 0.08857984146869577
+      },
+      "shap_scale_factor": {
+        "mean": 0.306371664119904,
+        "last": 0.20000000000000004,
+        "max": 0.48368513503453897
+      },
+      "shap_loss_normalized": {
+        "mean": 0.09545117158792976,
+        "last": 0.06120564845892099,
+        "max": 0.14770296779580605
+      },
+      "nonnegativity_loss": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "component_terms": {
+        "consistency": {
+          "mean": 0.19186042039058154,
+          "last": 0.19131521880626678,
+          "max": 0.20687512365671304
+        },
+        "sparsity": {
+          "mean": 0.9378946897311089,
+          "last": 0.937894860903422,
+          "max": 0.9378948853566096
+        },
+        "faithfulness": {
+          "mean": 0.18474716034709898,
+          "last": 0.18527312538562676,
+          "max": 0.201532719991146
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "component_weights": {
+        "consistency": {
+          "mean": 1.0,
+          "last": 1.0,
+          "max": 1.0
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "weighted_component_signal": {
+        "consistency": {
+          "mean": 0.19186042039058154,
+          "last": 0.19131521880626678,
+          "max": 0.20687512365671304
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "dominant_shap_component": "consistency",
+      "dominant_regularizer": "shap"
+    }
+  },
+  "dataset_settings": {
+    "train_limit": null,
+    "train_fraction": null,
+    "mix_with_real": false,
+    "mix_ratio": 0.0,
+    "synthetic_test_size": 0.2,
+    "test_size": 0.2,
+    "real_data_split": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2
+    },
+    "random_state": 43,
+    "shap_uses_real_data_only": true,
+    "test_uses_real_data_only": true
+  },
+  "band_metrics_denorm": {},
+  "shap_files": {
+    "feature_importance_shap": "feature_importance_shap_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.csv",
+    "history": "shap_history_20260503_114335_sml_eaar_v2_fast3_eaar_gate_s43.json"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/configs/config_sml2010_eaar_v2.yaml",
+  "seeds": [
+    42
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "tag": "sml_eaar_v2_diag3_s42",
+      "metrics_source": "vanilla_fallback",
+      "model_mode": "final_policy",
+      "fallback_used": true,
+      "r2_final": 0.9532332813069075,
+      "r2_vanilla": 0.9532332813069075,
+      "r2_shap_raw": 0.9528328311691004,
+      "r2_ea_raw": 0.9528328311691004
+    }
+  ],
+  "delta_r2_mean": -0.0004004501378070957,
+  "delta_r2_min": -0.0004004501378070957,
+  "delta_r2_max": -0.0004004501378070957
+}

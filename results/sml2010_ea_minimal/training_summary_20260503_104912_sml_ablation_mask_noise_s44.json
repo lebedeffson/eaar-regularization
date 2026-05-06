@@ -1,0 +1,260 @@
+{
+  "timestamp": "20260503_104912_sml_ablation_mask_noise_s44",
+  "created_at": "2026-05-03T10:49:12",
+  "tag": "sml_ablation_mask_noise_s44",
+  "model_mode": "final_policy",
+  "fallback_used": false,
+  "config_path": "/tmp/tmpkqf8idit.yaml",
+  "config_sha256": "e9063cbb1584bc1284071e02b12d6063f0fc61a3bb46c1d2a4afba11190f4f10",
+  "effective_config_sha256": "5616c9dba55dbc29ce56a6cdd8380b269b2599785e2533ebebc67eead76ccd98",
+  "git_commit": "3175c3ada3f8cd23dc10a676640fc45a1a3c4d9a",
+  "seed": 44,
+  "dataset": "sml2010",
+  "split_hash": "3ebece8e8d9e10cb1a749061e6e4bce4eebef10a44b6e50c155647ddf9f29205",
+  "run_meta": {
+    "fast_mode": true,
+    "inprocess_mode": true,
+    "tag_prefix": "sml_ablation_mask_noise"
+  },
+  "model_state": "anfis_model_state_20260503_104912_sml_ablation_mask_noise_s44.pt",
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_ea_minimal/anfis_model_state_20260503_104912_sml_ablation_mask_noise_s44.pt",
+  "train_size": 3309,
+  "shap_train_size": 2481,
+  "test_size": 828,
+  "vanilla_train_count": 3309,
+  "shap_train_count": 2481,
+  "real_test_count": 828,
+  "normalize_sum": false,
+  "metrics": {
+    "mse": 0.47156863164481755,
+    "rmse": 0.6867085492731378,
+    "mae": 0.5422999667817268,
+    "r2": 0.9541671047241952,
+    "r2_weighted": 0.9541671047241952,
+    "r2_mean": 0.9541716730422164
+  },
+  "vanilla_metrics": {
+    "mse": 0.471609036875669,
+    "rmse": 0.6867379681331658,
+    "mae": 0.5423441755755513,
+    "r2": 0.9541631776421334,
+    "r2_weighted": 0.9541631776421334,
+    "r2_mean": 0.9541677456831466
+  },
+  "shap_metrics": {
+    "mse": 0.47156863164481755,
+    "rmse": 0.6867085492731378,
+    "mae": 0.5422999667817268,
+    "r2": 0.9541671047241952,
+    "r2_weighted": 0.9541671047241952,
+    "r2_mean": 0.9541716730422164
+  },
+  "band_metrics": {
+    "all_outputs": {
+      "mse": 0.47156863164481755,
+      "rmse": 0.6867085492731378,
+      "mae": 0.5422999667817268,
+      "r2": 0.9541716730422164
+    }
+  },
+  "metrics_source": "shap",
+  "shap_config_enabled": true,
+  "shap_applied": true,
+  "shap_rejected": false,
+  "effective_ea_config": {
+    "autonomous_error_shap": true,
+    "error_importance_mode": "noise",
+    "error_importance_ema_beta": 0.9,
+    "grad_importance_ema_beta": 0.9,
+    "error_target_rho": 0.3,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.4,
+    "ea_bypass_legacy_normalization": true,
+    "ea_use_grad_balance": true,
+    "ea_target_grad_ratio": 0.01,
+    "ea_scale_min": 0.1,
+    "ea_scale_max": 10000.0,
+    "debug_grad_norms": true,
+    "grad_norm_interval": 20,
+    "fast_mode": true,
+    "inprocess_mode": true
+  },
+  "training_time_total": 23.555742502212524,
+  "training_time_shap": 16.920985221862793,
+  "timing": {
+    "data_loading_sec": 0.041368858999931035,
+    "pso_sec": 23.555742502212524,
+    "vanilla_train_sec": 23.555742502212524,
+    "ea_train_sec": 16.920985221862793,
+    "deletion_eval_sec": null,
+    "total_sec": 23.63141752499996
+  },
+  "saved_files": {
+    "predictions": "predictions_20260503_104912_sml_ablation_mask_noise_s44.npy",
+    "targets_test": "targets_test_20260503_104912_sml_ablation_mask_noise_s44.npy",
+    "metrics_csv": "metrics_20260503_104912_sml_ablation_mask_noise_s44.csv",
+    "feature_importance": "feature_importance_20260503_104912_sml_ablation_mask_noise_s44.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260503_104912_sml_ablation_mask_noise_s44.csv",
+      "history": "shap_history_20260503_104912_sml_ablation_mask_noise_s44.json"
+    }
+  },
+  "diagnostics": {
+    "prediction_stats": {
+      "mean": 20.262779905600247,
+      "std": 3.19811558698108,
+      "min": 10.640443801879883,
+      "max": 28.2757511138916,
+      "zero_fraction": 0.0,
+      "negative_fraction": 0.0,
+      "negative_count": 0
+    },
+    "target_stats": {
+      "mean": 20.280628804347828,
+      "std": 3.2124848781140014,
+      "min": 11.0787,
+      "max": 28.924
+    },
+    "coeff_stats": {
+      "mean": 0.5579517789577797,
+      "std": 2.8346133576660324,
+      "min": -11.083755493164062,
+      "max": 17.89841651916504,
+      "abs_mean": 1.3902714959681968,
+      "finite_fraction": 1.0,
+      "nonzero": 480,
+      "total": 480
+    },
+    "nonfinite_parameters": {},
+    "regularization": {
+      "active_components": [
+        "sparsity"
+      ],
+      "shap_contribution": {
+        "mean": 6.1029842152524164e-05,
+        "last": 0.00014636407174223749,
+        "max": 0.0001696178843326962
+      },
+      "tikhonov_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "nonnegativity_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "regularization_share": {
+        "mean": 0.04438678006395784,
+        "last": 0.027050575589707825,
+        "max": 0.08857808902920775
+      },
+      "shap_scale_factor": {
+        "mean": 0.26775673618907125,
+        "last": 0.20000000000000004,
+        "max": 0.5301808108980833
+      },
+      "shap_loss_normalized": {
+        "mean": 0.01419647872272847,
+        "last": 0.010234570894867945,
+        "max": 0.0293990808706253
+      },
+      "nonnegativity_loss": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "component_terms": {
+        "consistency": {
+          "mean": 0.052821883164409895,
+          "last": 0.05117285337585669,
+          "max": 0.057620246918537676
+        },
+        "sparsity": {
+          "mean": 0.9472736724421509,
+          "last": 0.9472736746836932,
+          "max": 0.9472736777403415
+        },
+        "faithfulness": {
+          "mean": 0.3386142580427675,
+          "last": 0.34340429611695117,
+          "max": 0.3594964948984293
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "component_weights": {
+        "consistency": {
+          "mean": 1.0,
+          "last": 1.0,
+          "max": 1.0
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "weighted_component_signal": {
+        "consistency": {
+          "mean": 0.052821883164409895,
+          "last": 0.05117285337585669,
+          "max": 0.057620246918537676
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "dominant_shap_component": "consistency",
+      "dominant_regularizer": "shap"
+    }
+  },
+  "dataset_settings": {
+    "train_limit": null,
+    "train_fraction": null,
+    "mix_with_real": false,
+    "mix_ratio": 0.0,
+    "synthetic_test_size": 0.2,
+    "test_size": 0.2,
+    "real_data_split": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2
+    },
+    "random_state": 44,
+    "shap_uses_real_data_only": true,
+    "test_uses_real_data_only": true
+  },
+  "band_metrics_denorm": {},
+  "shap_files": {
+    "feature_importance_shap": "feature_importance_shap_20260503_104912_sml_ablation_mask_noise_s44.csv",
+    "history": "shap_history_20260503_104912_sml_ablation_mask_noise_s44.json"
+  }
+}

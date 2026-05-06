@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-05-03T10:33:39",
+  "base_config": "/home/lebedeffson/Code/bonner-shap-reconstruction/configs/config_sml2010_ea_minimal.yaml",
+  "seeds": "42,43,44,45,46",
+  "variants": {
+    "full": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_full.yaml",
+      "patch": {},
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_full_sml_ablation_full.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_full_sml_ablation_full_permute_final.json"
+    },
+    "no_ema": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_no_ema.yaml",
+      "patch": {
+        "shap_reg.error_importance_ema_beta": 0.0,
+        "shap_reg.grad_importance_ema_beta": 0.0
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_no_ema_sml_ablation_no_ema.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_no_ema_sml_ablation_no_ema_permute_final.json"
+    },
+    "no_warmup": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_no_warmup.yaml",
+      "patch": {
+        "shap_reg.ea_warmup_fraction": 0.0,
+        "shap_reg.gamma_warmup_epochs": 0.0
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_no_warmup_sml_ablation_no_warmup.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_no_warmup_sml_ablation_no_warmup_permute_final.json"
+    },
+    "no_grad_balance": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_no_grad_balance.yaml",
+      "patch": {
+        "shap_reg.ea_use_grad_balance": false
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_no_grad_balance_sml_ablation_no_grad_balance.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_no_grad_balance_sml_ablation_no_grad_balance_permute_final.json"
+    },
+    "train_target": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_train_target.yaml",
+      "patch": {
+        "shap_reg.error_importance_target": "train"
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_train_target_sml_ablation_train_target.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_train_target_sml_ablation_train_target_permute_final.json"
+    },
+    "val_target": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_val_target.yaml",
+      "patch": {
+        "shap_reg.error_importance_target": "val"
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_val_target_sml_ablation_val_target.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_val_target_sml_ablation_val_target_permute_final.json"
+    },
+    "mask_mean": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_mask_mean.yaml",
+      "patch": {
+        "shap_reg.error_importance_mode": "mean"
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_mask_mean_sml_ablation_mask_mean.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_mask_mean_sml_ablation_mask_mean_permute_final.json"
+    },
+    "mask_noise": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_mask_noise.yaml",
+      "patch": {
+        "shap_reg.error_importance_mode": "noise"
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_mask_noise_sml_ablation_mask_noise.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_mask_noise_sml_ablation_mask_noise_permute_final.json"
+    },
+    "no_fallback": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_no_fallback.yaml",
+      "patch": {
+        "shap_reg.quality_first": false,
+        "shap_reg.reject_on_val_degrade": false,
+        "shap_reg.restore_best_state": false,
+        "shap_reg.accuracy_guard.enabled": false
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_no_fallback_sml_ablation_no_fallback.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_no_fallback_sml_ablation_no_fallback_permute_final.json"
+    },
+    "no_feature_gates": {
+      "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_no_feature_gates.yaml",
+      "patch": {
+        "shap_reg.use_feature_gates": false
+      },
+      "multiseed": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/multiseed_config_sml2010_ea_minimal_no_feature_gates_sml_ablation_no_feature_gates.json",
+      "explainability": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/explainability_multiseed_config_sml2010_ea_minimal_no_feature_gates_sml_ablation_no_feature_gates_permute_final.json"
+    }
+  }
+}

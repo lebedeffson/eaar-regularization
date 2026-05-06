@@ -1,0 +1,72 @@
+{
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation/configs/config_sml2010_ea_minimal_anti_q_err.yaml",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "tag": "neg_core_v2_fast3_final_anti_q_err_s42",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260504_122104_neg_core_v2_fast3_final_anti_q_err_s42.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9117193016564286,
+      "r2_vanilla": 0.9532332813069075,
+      "r2_shap_raw": 0.9117193016564286,
+      "r2_ea_raw": 0.9117193016564286
+    },
+    {
+      "seed": 43,
+      "tag": "neg_core_v2_fast3_final_anti_q_err_s43",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260504_122119_neg_core_v2_fast3_final_anti_q_err_s43.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9273518855041941,
+      "r2_vanilla": 0.9504482777730557,
+      "r2_shap_raw": 0.9273518855041941,
+      "r2_ea_raw": 0.9273518855041941
+    },
+    {
+      "seed": 44,
+      "tag": "neg_core_v2_fast3_final_anti_q_err_s44",
+      "summary_path": "results/sml2010_ea_minimal/training_summary_20260504_122134_neg_core_v2_fast3_final_anti_q_err_s44.json",
+      "metrics_source": "shap",
+      "model_mode": "ea_raw",
+      "fallback_used": false,
+      "unstable_prediction_flag": false,
+      "r2_final": 0.9284248070914782,
+      "r2_vanilla": 0.9541631776421334,
+      "r2_shap_raw": 0.9284248070914782,
+      "r2_ea_raw": 0.9284248070914782
+    }
+  ],
+  "n_unstable_runs": 0,
+  "unstable_seeds": [],
+  "aggregate_all_runs": {
+    "n_runs": 3,
+    "delta_r2_mean": -0.0301162474899986,
+    "delta_r2_min": -0.04151397965047898,
+    "delta_r2_max": -0.02309639226886162,
+    "wins": 0,
+    "losses": 3,
+    "fallback_rate": 0.0
+  },
+  "aggregate_stable_only": {
+    "n_runs": 3,
+    "delta_r2_mean": -0.0301162474899986,
+    "delta_r2_min": -0.04151397965047898,
+    "delta_r2_max": -0.02309639226886162,
+    "wins": 0,
+    "losses": 3,
+    "fallback_rate": 0.0
+  },
+  "delta_r2_mean": -0.0301162474899986,
+  "delta_r2_min": -0.04151397965047898,
+  "delta_r2_max": -0.02309639226886162
+}

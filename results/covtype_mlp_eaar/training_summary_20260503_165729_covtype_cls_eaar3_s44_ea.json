@@ -1,0 +1,51 @@
+{
+  "timestamp": "20260503_165729_covtype_cls_eaar3_s44_ea",
+  "created_at": "2026-05-03T16:57:29",
+  "tag": "covtype_cls_eaar3_s44_ea",
+  "config_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/_tmp_mlp_cls_multiseed/config_covtype_mlp_eaar_s44_ea.yaml",
+  "config_sha256": "90965f2a1b2a0d705043905f4817bb4f58a06ac5747d43881b112f2be60be102",
+  "effective_config_sha256": "ea7df71674f10def735d04f216e71600f3744f8763df5068c4f92fa01d1c24d1",
+  "git_commit": "d87066e7338249ab2c7a5787720f5a98e23e1160",
+  "seed": 44,
+  "dataset": "covtype",
+  "split_hash": "bd0495c1d2fdfe28c525d2577adebec6e19cad36e88a5c11c557b33e782978c0",
+  "model_mode": "ea_raw",
+  "fallback_used": false,
+  "metrics_source": "ea_raw",
+  "metrics": {
+    "accuracy": 0.84465,
+    "balanced_accuracy": 0.7279951741980996,
+    "macro_f1": 0.7596147704171499,
+    "ce": 0.38085513669211
+  },
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/covtype_mlp_eaar/mlp_cls_state_20260503_165729_covtype_cls_eaar3_s44_ea.pt",
+  "saved_files": {
+    "logits": "logits_20260503_165729_covtype_cls_eaar3_s44_ea.npy",
+    "feature_importance": "feature_importance_20260503_165729_covtype_cls_eaar3_s44_ea.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260503_165729_covtype_cls_eaar3_s44_ea.csv"
+    }
+  },
+  "effective_eaar_config": {
+    "enabled": true,
+    "task_type": "classification",
+    "score_type": "logprob",
+    "masking_mode": "permute",
+    "ema_beta": 0.9,
+    "alignment_loss": "cosine_mse",
+    "alignment_alpha": 0.5,
+    "warmup_fraction": 0.25,
+    "gamma": 0.02,
+    "grad_combine_mode": "projected"
+  },
+  "training_diag": {
+    "grad_conflict_dot": 0.19628319144248962,
+    "grad_conflict_cosine": 0.18904894590377808,
+    "grad_projected": false,
+    "combine_mode": "projected"
+  },
+  "timing": {
+    "train_sec": 112.60123589299837,
+    "total_sec": 112.60123589299837
+  }
+}

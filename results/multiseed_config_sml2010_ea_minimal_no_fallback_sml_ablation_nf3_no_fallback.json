@@ -1,0 +1,46 @@
+{
+  "config": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/ablation_nonfast/configs/config_sml2010_ea_minimal_no_fallback.yaml",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "tag": "sml_ablation_nf3_no_fallback_s42",
+      "metrics_source": "vanilla_fallback",
+      "model_mode": "final_policy",
+      "fallback_used": true,
+      "r2_final": 0.9380579076447224,
+      "r2_vanilla": 0.9380579076447224,
+      "r2_shap_raw": 0.8849865888737801,
+      "r2_ea_raw": 0.8849865888737801
+    },
+    {
+      "seed": 43,
+      "tag": "sml_ablation_nf3_no_fallback_s43",
+      "metrics_source": "vanilla_fallback",
+      "model_mode": "final_policy",
+      "fallback_used": true,
+      "r2_final": 0.9571045616336461,
+      "r2_vanilla": 0.9571045616336461,
+      "r2_shap_raw": 0.8713134641199614,
+      "r2_ea_raw": 0.8713134641199614
+    },
+    {
+      "seed": 44,
+      "tag": "sml_ablation_nf3_no_fallback_s44",
+      "metrics_source": "vanilla_fallback",
+      "model_mode": "final_policy",
+      "fallback_used": true,
+      "r2_final": 0.9566291382143447,
+      "r2_vanilla": 0.9566291382143447,
+      "r2_shap_raw": 0.9288021136923786,
+      "r2_ea_raw": 0.9288021136923786
+    }
+  ],
+  "delta_r2_mean": -0.05556314693553103,
+  "delta_r2_min": -0.08579109751368474,
+  "delta_r2_max": -0.02782702452196606
+}

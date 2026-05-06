@@ -1,0 +1,60 @@
+{
+  "timestamp": "20260504_115906_energy_resmlp_eaar5_s43_ea",
+  "created_at": "2026-05-04T11:59:06",
+  "tag": "energy_resmlp_eaar5_s43_ea",
+  "config_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/_tmp_resmlp_multiseed/config_energy_resmlp_ea_s43_ea.yaml",
+  "config_sha256": "8e7a252e95344ab5703d3e381c41aaf2f432c8f092b1ec581f814242784775ee",
+  "effective_config_sha256": "1f2e4b70e76db831c03150386ee1f9834271b9c82899ba4b7ea7543b9e70bb5e",
+  "git_commit": "e07a530b390c470f764892d5063e70008597dce8",
+  "seed": 43,
+  "dataset": "energy_efficiency",
+  "split_hash": "8cb0cf0538ba895922e8b0dbde92d31f2375b5ee8a8e387ce7082b1d9f53105f",
+  "data_hash": "18005a6a1dd3abbda78a2d7d6911dd2e566c0d72f8d6f8ff8e6a125e8b5df330",
+  "model_mode": "ea_raw",
+  "fallback_used": false,
+  "unstable_prediction_flag": false,
+  "metrics_source": "shap",
+  "metrics": {
+    "mse": 0.7791526242259279,
+    "rmse": 0.8826962242050931,
+    "mae": 0.6155398733584916,
+    "r2": 0.9919733136494618
+  },
+  "runtime": {
+    "device_used": "cpu",
+    "cpu_model": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "gpu_model": null,
+    "cuda_version": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "python_version": "3.14.4",
+    "platform": "Linux-7.0.2-arch1-1-x86_64-with-glibc2.43",
+    "ram_total_bytes": 15897735168
+  },
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/energy_resmlp_ea/resmlp_state_20260504_115906_energy_resmlp_eaar5_s43_ea.pt",
+  "saved_files": {
+    "predictions": "predictions_20260504_115906_energy_resmlp_eaar5_s43_ea.npy",
+    "feature_importance": "feature_importance_20260504_115906_energy_resmlp_eaar5_s43_ea.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260504_115906_energy_resmlp_eaar5_s43_ea.csv"
+    }
+  },
+  "effective_ea_config": {
+    "enabled": true,
+    "error_importance_mode": "permute",
+    "error_importance_ema_beta": 0.9,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.2,
+    "gamma": 0.03
+  },
+  "model_config": {
+    "hidden_dim": 128,
+    "n_blocks": 2,
+    "dropout": 0.05
+  },
+  "timing": {
+    "vanilla_train_sec": 8.763869211999918,
+    "ea_train_sec": 8.763869211999918,
+    "total_sec": 8.763869211999918
+  }
+}

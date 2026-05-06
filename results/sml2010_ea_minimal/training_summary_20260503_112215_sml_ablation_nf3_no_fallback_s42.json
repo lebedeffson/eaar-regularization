@@ -1,0 +1,275 @@
+{
+  "timestamp": "20260503_112215_sml_ablation_nf3_no_fallback_s42",
+  "created_at": "2026-05-03T11:22:15",
+  "tag": "sml_ablation_nf3_no_fallback_s42",
+  "model_mode": "final_policy",
+  "fallback_used": true,
+  "config_path": "/tmp/tmpjv7erqkg.yaml",
+  "config_sha256": "061f251dd6020c2ff71413add68d135a6ff68eb80b3030a62997cbde184e793b",
+  "effective_config_sha256": "ec7b3f24460b9c95102fd410ebff53d3c50640dff874696b01243315bd1a33d4",
+  "git_commit": "3175c3ada3f8cd23dc10a676640fc45a1a3c4d9a",
+  "seed": 42,
+  "dataset": "sml2010",
+  "split_hash": "1d9c9536b554351b5b66322f7cff58c542ba44b9c11e29876076392d772ffa4c",
+  "run_meta": {
+    "fast_mode": false,
+    "inprocess_mode": true,
+    "tag_prefix": "sml_ablation_nf3_no_fallback"
+  },
+  "model_state": "anfis_model_state_20260503_112215_sml_ablation_nf3_no_fallback_s42.pt",
+  "model_state_path": "/home/lebedeffson/Code/bonner-shap-reconstruction/results/sml2010_ea_minimal/anfis_model_state_20260503_112215_sml_ablation_nf3_no_fallback_s42.pt",
+  "train_size": 3309,
+  "shap_train_size": 2481,
+  "test_size": 828,
+  "vanilla_train_count": 3309,
+  "shap_train_count": 2481,
+  "real_test_count": 828,
+  "normalize_sum": false,
+  "metrics": {
+    "mse": 0.6752958042027866,
+    "rmse": 0.8217638372444888,
+    "mae": 0.5721597729033322,
+    "r2": 0.9380579076447224,
+    "r2_weighted": 0.9380579076447224,
+    "r2_mean": 0.9380502410674358
+  },
+  "vanilla_metrics": {
+    "mse": 0.6752958042027866,
+    "rmse": 0.8217638372444888,
+    "mae": 0.5721597729033322,
+    "r2": 0.9380579076447224,
+    "r2_weighted": 0.9380579076447224,
+    "r2_mean": 0.9380502410674358
+  },
+  "shap_metrics": {
+    "mse": 1.2538819889245922,
+    "rmse": 1.1197687211762044,
+    "mae": 0.7879982809158913,
+    "r2": 0.8849865888737801,
+    "r2_weighted": 0.8849865888737801,
+    "r2_mean": 0.8850391184574293
+  },
+  "band_metrics": {
+    "all_outputs": {
+      "mse": 0.6752958042027866,
+      "rmse": 0.8217638372444888,
+      "mae": 0.5721597729033322,
+      "r2": 0.9380502410674358
+    }
+  },
+  "metrics_source": "vanilla_fallback",
+  "shap_config_enabled": true,
+  "shap_applied": false,
+  "shap_rejected": true,
+  "effective_ea_config": {
+    "autonomous_error_shap": true,
+    "error_importance_mode": "permute",
+    "error_importance_ema_beta": 0.9,
+    "grad_importance_ema_beta": 0.9,
+    "error_target_rho": 0.3,
+    "ea_alignment_loss": "cosine_mse",
+    "ea_alignment_alpha": 0.5,
+    "ea_warmup_fraction": 0.4,
+    "ea_bypass_legacy_normalization": true,
+    "ea_use_grad_balance": true,
+    "ea_target_grad_ratio": 0.01,
+    "ea_scale_min": 0.1,
+    "ea_scale_max": 10000.0,
+    "debug_grad_norms": true,
+    "grad_norm_interval": 20,
+    "fast_mode": false,
+    "inprocess_mode": true
+  },
+  "training_time_total": 58.786489725112915,
+  "training_time_shap": 22.10523748397827,
+  "timing": {
+    "data_loading_sec": 0.04197336800007179,
+    "pso_sec": 58.786489725112915,
+    "vanilla_train_sec": 58.786489725112915,
+    "ea_train_sec": 22.10523748397827,
+    "deletion_eval_sec": null,
+    "total_sec": 58.959525218999715
+  },
+  "saved_files": {
+    "predictions": "predictions_20260503_112215_sml_ablation_nf3_no_fallback_s42.npy",
+    "targets_test": "targets_test_20260503_112215_sml_ablation_nf3_no_fallback_s42.npy",
+    "samples": {
+      "indices": [
+        71,
+        73,
+        357,
+        361,
+        538,
+        577,
+        636,
+        709
+      ],
+      "X": "samples_20260503_112215_sml_ablation_nf3_no_fallback_s42_X.npy",
+      "y": "samples_20260503_112215_sml_ablation_nf3_no_fallback_s42_y.npy",
+      "pred": "samples_20260503_112215_sml_ablation_nf3_no_fallback_s42_pred.npy"
+    },
+    "metrics_csv": "metrics_20260503_112215_sml_ablation_nf3_no_fallback_s42.csv",
+    "feature_importance": "feature_importance_20260503_112215_sml_ablation_nf3_no_fallback_s42.csv",
+    "shap": {
+      "feature_importance_shap": "feature_importance_shap_20260503_112215_sml_ablation_nf3_no_fallback_s42.csv",
+      "history": "shap_history_20260503_112215_sml_ablation_nf3_no_fallback_s42.json"
+    }
+  },
+  "diagnostics": {
+    "prediction_stats": {
+      "mean": 20.092311320673442,
+      "std": 3.3127956736470408,
+      "min": 6.303533554077148,
+      "max": 31.2218017578125,
+      "zero_fraction": 0.0,
+      "negative_fraction": 0.0,
+      "negative_count": 0
+    },
+    "target_stats": {
+      "mean": 20.091670591787437,
+      "std": 3.306111225086599,
+      "min": 11.144,
+      "max": 28.8173
+    },
+    "coeff_stats": {
+      "mean": 0.44948173013213477,
+      "std": 2.9237214319479423,
+      "min": -13.781354904174805,
+      "max": 17.731069564819336,
+      "abs_mean": 1.4890598962596244,
+      "finite_fraction": 1.0,
+      "nonzero": 480,
+      "total": 480
+    },
+    "nonfinite_parameters": {},
+    "regularization": {
+      "active_components": [
+        "sparsity"
+      ],
+      "shap_contribution": {
+        "mean": 7.344824353495847e-05,
+        "last": 0.0002212216379867198,
+        "max": 0.0003964646394030215
+      },
+      "tikhonov_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "nonnegativity_contribution": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "regularization_share": {
+        "mean": 0.00010236248797539054,
+        "last": 0.0003099445357248889,
+        "max": 0.0005430153912748419
+      },
+      "shap_scale_factor": {
+        "mean": 0.2542374759283693,
+        "last": 0.20000000000000004,
+        "max": 0.42009231222022464
+      },
+      "shap_loss_normalized": {
+        "mean": 0.024269159156112715,
+        "last": 0.019307939908825435,
+        "max": 0.04201578711852049
+      },
+      "nonnegativity_loss": {
+        "mean": 0.0,
+        "last": 0.0,
+        "max": 0.0
+      },
+      "component_terms": {
+        "consistency": {
+          "mean": 0.09595635545750458,
+          "last": 0.0965396972038807,
+          "max": 0.10347523731298935
+        },
+        "sparsity": {
+          "mean": 0.9472733729160747,
+          "last": 0.947273083222218,
+          "max": 0.9472736716270447
+        },
+        "faithfulness": {
+          "mean": 0.14949536611063358,
+          "last": 0.14159173728563848,
+          "max": 0.1658189315826465
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "component_weights": {
+        "consistency": {
+          "mean": 1.0,
+          "last": 1.0,
+          "max": 1.0
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "weighted_component_signal": {
+        "consistency": {
+          "mean": 0.09595635545750458,
+          "last": 0.0965396972038807,
+          "max": 0.10347523731298935
+        },
+        "sparsity": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "faithfulness": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        },
+        "stability": {
+          "mean": 0.0,
+          "last": 0.0,
+          "max": 0.0
+        }
+      },
+      "dominant_shap_component": "consistency",
+      "dominant_regularizer": "shap"
+    }
+  },
+  "dataset_settings": {
+    "train_limit": null,
+    "train_fraction": null,
+    "mix_with_real": false,
+    "mix_ratio": 0.0,
+    "synthetic_test_size": 0.2,
+    "test_size": 0.2,
+    "real_data_split": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2
+    },
+    "random_state": 42,
+    "shap_uses_real_data_only": true,
+    "test_uses_real_data_only": true
+  },
+  "band_metrics_denorm": {},
+  "shap_files": {
+    "feature_importance_shap": "feature_importance_shap_20260503_112215_sml_ablation_nf3_no_fallback_s42.csv",
+    "history": "shap_history_20260503_112215_sml_ablation_nf3_no_fallback_s42.json"
+  }
+}
