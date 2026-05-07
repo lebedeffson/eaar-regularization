@@ -83,6 +83,90 @@ def _metrics(y_true, y_pred):
     }
 
 
+def _mask_columns(X, cols, mode, rng):
+    X2 = np.asarray(X, dtype=float).copy()
+    for j in cols:
+        if mode == "permute":
+            idx = rng.permutation(X2.shape[0])
+            X2[:, j] = X2[idx, j]
+        elif mode == "mean":
+            X2[:, j] = float(np.mean(X2[:, j]))
+        elif mode == "noise":
+            std = float(np.std(X2[:, j]))
+            X2[:, j] = X2[:, j] + rng.normal(0.0, 0.1 * std + 1e-8, size=X2.shape[0])
+        else:
+            raise ValueError(f"Unknown masking mode: {mode}")
+    return X2
+
+
+def _auc(y):
+    y = np.asarray(y, dtype=float)
+    if y.size == 1:
+        return float(y[0])
+    x = np.arange(1, y.size + 1, dtype=float)
+    if hasattr(np, "trapezoid"):
+        return float(np.trapezoid(y, x))
+    return float(np.trapz(y, x))
+
+
+def _deletion_gap_for_importance(model, X_sc, y, importance, mask_mode, k_list, random_trials, seed, device):
+    model.eval()
+    x_t = torch.tensor(X_sc, dtype=torch.float32, device=device)
+    with torch.no_grad():
+        pred0 = model(x_t).detach().cpu().numpy()
+    base_mse = float(np.mean((y - pred0) ** 2))
+
+    imp = np.asarray(importance, dtype=float)
+    imp = np.nan_to_num(imp, nan=0.0, posinf=0.0, neginf=0.0)
+    imp = np.maximum(imp, 0.0)
+    if float(np.sum(imp)) <= 1e-12:
+        imp = np.full_like(imp, 1.0 / max(1, imp.size))
+    imp = imp / (float(np.sum(imp)) + 1e-12)
+    order_desc = np.argsort(-imp)
+    order_asc = np.argsort(imp)
+
+    k_eff = [int(k) for k in k_list if 0 < int(k) <= X_sc.shape[1]]
+    if not k_eff:
+        k_eff = [1, min(2, X_sc.shape[1])]
+    k_eff = sorted(set(k_eff))
+
+    top_curve, rnd_curve, bot_curve = [], [], []
+    for k in k_eff:
+        rng = np.random.default_rng(seed + 97 * k)
+        top_idx = order_desc[:k]
+        bot_idx = order_asc[:k]
+        X_top = _mask_columns(X_sc, top_idx, mask_mode, rng)
+        X_bot = _mask_columns(X_sc, bot_idx, mask_mode, rng)
+        with torch.no_grad():
+            p_top = model(torch.tensor(X_top, dtype=torch.float32, device=device)).detach().cpu().numpy()
+            p_bot = model(torch.tensor(X_bot, dtype=torch.float32, device=device)).detach().cpu().numpy()
+        d_top = float(np.mean((y - p_top) ** 2) - base_mse)
+        d_bot = float(np.mean((y - p_bot) ** 2) - base_mse)
+        trials = []
+        for t in range(max(1, int(random_trials))):
+            rng_t = np.random.default_rng(seed + 1009 * (k + 1) + 7919 * (t + 1))
+            cols = rng_t.choice(X_sc.shape[1], size=k, replace=False)
+            X_r = _mask_columns(X_sc, cols, mask_mode, rng_t)
+            with torch.no_grad():
+                p_r = model(torch.tensor(X_r, dtype=torch.float32, device=device)).detach().cpu().numpy()
+            trials.append(float(np.mean((y - p_r) ** 2) - base_mse))
+        d_rnd = float(np.mean(trials))
+        top_curve.append(d_top)
+        bot_curve.append(d_bot)
+        rnd_curve.append(d_rnd)
+
+    auc_top = _auc(top_curve)
+    auc_bot = _auc(bot_curve)
+    auc_rnd = _auc(rnd_curve)
+    return {
+        "auc_top": float(auc_top),
+        "auc_bottom": float(auc_bot),
+        "auc_random": float(auc_rnd),
+        "auc_gap": float(auc_top - auc_bot),
+        "top_random_ratio": float(auc_top / max(auc_rnd, 1e-12)),
+    }
+
+
 def main():
     args = parse_args()
     cfg_path = Path(args.config).resolve()
@@ -111,13 +195,28 @@ def main():
     X = np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0)
     y = np.nan_to_num(y, nan=0.0, posinf=0.0, neginf=0.0)
 
-    X_train, X_test, y_train, y_test = train_test_split(
+    X_train_all, X_test, y_train_all, y_test = train_test_split(
         X, y, test_size=float(ds.get("test_size", 0.2)), random_state=int(ds.get("random_state", 42))
     )
     split_hash = _sha([X_test, y_test])
 
+    sel_cfg = ecfg.get("faithfulness_selection", {}) if isinstance(ecfg, dict) else {}
+    sel_enabled = bool(sel_cfg.get("enabled", False))
+    val_frac = float(sel_cfg.get("val_fraction", 0.2))
+    if sel_enabled and 0.0 < val_frac < 0.5 and len(X_train_all) > 32:
+        X_train, X_val, y_train, y_val = train_test_split(
+            X_train_all,
+            y_train_all,
+            test_size=val_frac,
+            random_state=seed + 17,
+        )
+    else:
+        X_train, y_train = X_train_all, y_train_all
+        X_val, y_val = None, None
+
     scaler = StandardScaler()
     X_train_sc = scaler.fit_transform(X_train)
+    X_val_sc = scaler.transform(X_val) if X_val is not None else None
     X_test_sc = scaler.transform(X_test)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -148,6 +247,23 @@ def main():
     masking_mode = str(ecfg.get("error_importance_mode", "permute"))
     ema_beta = float(ecfg.get("error_importance_ema_beta", 0.9))
     reg_warmup = float(ecfg.get("ea_warmup_fraction", 0.25))
+    importance_mode = str(ecfg.get("importance_mode", "task_loss"))
+
+    best_state = None
+    best_score = -1e18
+    best_epoch = -1
+    best_diag = {}
+
+    eval_every = int(sel_cfg.get("eval_every_epochs", 10))
+    sel_k_list = sel_cfg.get("k_list", [1, 2, 3, 4])
+    if not isinstance(sel_k_list, (list, tuple)):
+        sel_k_list = [1, 2, 3, 4]
+    sel_trials = int(sel_cfg.get("random_trials", 10))
+    sel_mask = str(sel_cfg.get("masking_mode", masking_mode))
+    min_r2 = sel_cfg.get("min_r2", None)
+    min_r2 = None if min_r2 is None else float(min_r2)
+    alpha_top_random = float(sel_cfg.get("alpha_top_random", 0.0))
+    lambda_r2_penalty = float(sel_cfg.get("lambda_r2_penalty", 1.0))
 
     for ep in range(epochs):
         model.train()
@@ -177,6 +293,7 @@ def main():
                     prev_q=prev_q,
                     align_mode=align_mode,
                     align_alpha=align_alpha,
+                    importance_mode=importance_mode,
                 )
                 ea_ema = ea.ema_state.detach()
                 prev_q = ea.q_err.detach()
@@ -185,7 +302,52 @@ def main():
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             opt.step()
 
+        if sel_enabled and X_val_sc is not None and (((ep + 1) % max(1, eval_every) == 0) or (ep + 1 == epochs)):
+            model.eval()
+            with torch.no_grad():
+                p_val = model(torch.tensor(X_val_sc, dtype=torch.float32, device=device)).detach().cpu().numpy()
+            r2_val = float(r2_score(y_val, p_val, multioutput="uniform_average"))
+            x_imp = torch.tensor(X_val_sc[: min(256, len(X_val_sc))], dtype=torch.float32, device=device)
+            y_imp = torch.tensor(y_val[: min(256, len(y_val))], dtype=torch.float32, device=device)
+            p_imp = gradient_importance(
+                model,
+                x_imp,
+                y_batch=y_imp,
+                loss_fn=loss_fn,
+                task_type="regression",
+                importance_mode=importance_mode,
+            ).detach().cpu().numpy()
+            dm = _deletion_gap_for_importance(
+                model=model,
+                X_sc=np.asarray(X_val_sc, dtype=float),
+                y=np.asarray(y_val, dtype=float),
+                importance=p_imp,
+                mask_mode=sel_mask,
+                k_list=sel_k_list,
+                random_trials=sel_trials,
+                seed=seed + ep,
+                device=device,
+            )
+            penalty = 0.0
+            if min_r2 is not None and r2_val < min_r2:
+                penalty = lambda_r2_penalty * (min_r2 - r2_val) ** 2
+            score = dm["auc_gap"] + alpha_top_random * dm["top_random_ratio"] - penalty
+            if score > best_score:
+                best_score = float(score)
+                best_epoch = int(ep + 1)
+                best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+                best_diag = {
+                    "score": float(score),
+                    "auc_gap": float(dm["auc_gap"]),
+                    "top_random_ratio": float(dm["top_random_ratio"]),
+                    "r2_val": float(r2_val),
+                    "penalty": float(penalty),
+                }
+
     t1 = time.perf_counter()
+
+    if sel_enabled and best_state is not None and bool(sel_cfg.get("restore_best", True)):
+        model.load_state_dict(best_state, strict=True)
 
     model.eval()
     with torch.no_grad():
@@ -193,7 +355,15 @@ def main():
     m = _metrics(y_test, pred_test)
 
     x_imp = torch.tensor(X_train_sc[: min(512, len(X_train_sc))], dtype=torch.float32, device=device)
-    p = gradient_importance(model, x_imp).detach().cpu().numpy()
+    y_imp_train = torch.tensor(y_train[: min(512, len(y_train))], dtype=torch.float32, device=device)
+    p = gradient_importance(
+        model,
+        x_imp,
+        y_batch=y_imp_train,
+        loss_fn=loss_fn,
+        task_type="regression",
+        importance_mode=importance_mode,
+    ).detach().cpu().numpy()
     p = np.maximum(p, 0.0)
     p = p / (np.sum(p) + 1e-12)
 
@@ -265,7 +435,21 @@ def main():
             "ea_alignment_loss": align_mode,
             "ea_alignment_alpha": align_alpha,
             "ea_warmup_fraction": reg_warmup,
+            "importance_mode": importance_mode,
             "gamma": gamma,
+        },
+        "faithfulness_selection": {
+            "enabled": sel_enabled,
+            "best_epoch": best_epoch,
+            "best_score": float(best_score) if np.isfinite(best_score) else None,
+            "best_diag": best_diag,
+            "eval_every_epochs": eval_every,
+            "k_list": [int(k) for k in sel_k_list],
+            "random_trials": sel_trials,
+            "masking_mode": sel_mask,
+            "min_r2": min_r2,
+            "alpha_top_random": alpha_top_random,
+            "lambda_r2_penalty": lambda_r2_penalty,
         },
         "model_config": {
             "hidden_dim": int(mcfg.get("hidden_dim", 128)),

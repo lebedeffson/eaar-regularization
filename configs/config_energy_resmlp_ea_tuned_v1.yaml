@@ -1,0 +1,50 @@
+dataset:
+  train_data: data/energy_efficiency.csv
+  test_size: 0.2
+  random_state: 42
+  feature_columns:
+  - relative_compactness
+  - surface_area
+  - wall_area
+  - roof_area
+  - overall_height
+  - orientation
+  - glazing_area
+  - glazing_area_distribution
+  target_columns:
+  - heating_load
+  - cooling_load
+model:
+  seed: 42
+  epochs: 180
+  batch_size: 64
+  lr: 0.001
+  dropout: 0.05
+  hidden_dim: 128
+  n_blocks: 2
+shap_reg:
+  enabled: true
+  gamma: 0.01
+  error_importance_mode: permute
+  error_importance_ema_beta: 0.9
+  ea_alignment_loss: cosine_mse
+  ea_alignment_alpha: 0.5
+  ea_warmup_fraction: 0.2
+  faithfulness_selection:
+    enabled: false
+    val_fraction: 0.2
+    eval_every_epochs: 10
+    k_list:
+    - 1
+    - 2
+    - 3
+    - 4
+    random_trials: 12
+    masking_mode: permute
+    min_r2: 0.88
+    alpha_top_random: 0.05
+    lambda_r2_penalty: 4.0
+    restore_best: true
+  importance_mode: task_loss
+output:
+  results_dir: results/energy_resmlp_ea

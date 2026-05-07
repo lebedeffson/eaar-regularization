@@ -43,8 +43,10 @@ def gradient_importance(
     x_batch: torch.Tensor,
     *,
     y_batch: torch.Tensor | None = None,
+    loss_fn: Callable[[torch.Tensor, torch.Tensor], torch.Tensor] | None = None,
     task_type: str = "regression",
     score_type: str = "logprob",
+    importance_mode: str = "output_mean",
     scalarize_fn: Callable[[torch.Tensor], torch.Tensor] | None = None,
 ) -> torch.Tensor:
     """Compute normalized gradient attribution p_theta for any differentiable model."""
@@ -52,7 +54,16 @@ def gradient_importance(
     pred = model(x)
     if scalarize_fn is None:
         tt = str(task_type).lower()
-        if tt == "classification":
+        mode = str(importance_mode).lower()
+        if mode == "task_loss" and tt == "regression" and y_batch is not None:
+            y_ref = y_batch.detach()
+            if pred.shape != y_ref.shape:
+                md = min(pred.shape[-1], y_ref.shape[-1])
+                pred = pred[..., :md]
+                y_ref = y_ref[..., :md]
+            # Per-sample task loss signal for attribution (functional mode).
+            scalar = torch.mean((pred - y_ref) ** 2, dim=1)
+        elif tt == "classification":
             if y_batch is None:
                 scalar = torch.max(pred, dim=1).values
             else:
@@ -216,6 +227,7 @@ def compute_ea_regularizer(
     align_alpha: float = 0.5,
     task_type: str = "regression",
     score_type: str = "logprob",
+    importance_mode: str = "output_mean",
     positive_clipping: bool = True,
 ) -> EAResult:
     p = gradient_importance(
@@ -224,6 +236,7 @@ def compute_ea_regularizer(
         y_batch=y_batch,
         task_type=task_type,
         score_type=score_type,
+        importance_mode=importance_mode,
         scalarize_fn=scalarize_fn,
     )
     q_raw, q_ema, q_diag = error_importance(
